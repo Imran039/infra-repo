@@ -1,0 +1,6 @@
+steps:
+  - name: "hashicorp/terraform:latest"
+    entrypoint: "sh"
+    args:
+      - "-c"
+      - "./terraform/terraform-deploy.sh"
