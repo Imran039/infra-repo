@@ -17,7 +17,7 @@ resource "google_container_cluster" "primary" {
   remove_default_node_pool = true
   initial_node_count       = 1
 
-  min_master_version = "1.26.0"  # ✅ RECOMMENDED: Set a stable Kubernetes version
+  min_master_version = "1.31.6-gke.1020000"  # ✅ RECOMMENDED: Set a stable Kubernetes version
   network           = "default"  # ✅ RECOMMENDED: Use the default VPC network
 
   lifecycle {
