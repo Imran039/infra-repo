@@ -3,7 +3,7 @@ steps:
     entrypoint: "sh"
     args:
       - "-c"
-      - "./terraform/terraform-deploy.sh"
+      - "./terraform-deploy.sh"
 
 options:
   logging: CLOUD_LOGGING_ONLY
