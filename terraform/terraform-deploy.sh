@@ -1,11 +1,11 @@
 #!/bin/sh
-set -e  # Exit immediately if a command exits with a non-zero status
+set -e  # Exit immediately if a command fails
 
-# Navigate to the Terraform directory
-cd terraform
+# Change to the Terraform directory
+cd "$(dirname "$0")"
 
 # Initialize Terraform
 terraform init
 
-# Apply Terraform configuration
+# Apply Terraform Configuration
 terraform apply -auto-approve
