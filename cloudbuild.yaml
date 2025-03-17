@@ -1,9 +1,9 @@
 steps:
   - name: "hashicorp/terraform:latest"
-    entrypoint: "bash"
+    entrypoint: "sh"
     args:
       - "-c"
-      - "chmod +x terraform/terraform-deploy.sh && ./terraform/terraform-deploy.sh"
+      - "chmod +x terraform/terraform-deploy.sh && sh terraform/terraform-deploy.sh"
 
 options:
   logging: CLOUD_LOGGING_ONLY
