@@ -1,0 +1,27 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: cloud-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: manual
+  volumeMode: Filesystem
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+        - matchExpressions:
+            - key: topology.kubernetes.io/zone
+              operator: In
+              values:
+                - us-central1-a  # ✅ EXPLICITLY SET TO us-central1-a
+            - key: topology.kubernetes.io/region
+              operator: In
+              values:
+                - us-central1
+  gcePersistentDisk:
+    pdName: cloud-disk
+    fsType: ext4
