@@ -1,21 +1,4 @@
-# PersistentVolume (PV)
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: cloud-pv
-spec:
-  capacity:
-    storage: 1Gi
-  accessModes:
-    - ReadWriteOnce
-  persistentVolumeReclaimPolicy: Retain
-  storageClassName: manual
-  gcePersistentDisk:
-    pdName: cloud-disk
-    fsType: ext4
-
----
-# PersistentVolumeClaim (PVC)
+# PersistentVolumeClaim (PVC) - Uses GKE's Default StorageClass
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
@@ -26,4 +9,4 @@ spec:
   resources:
     requests:
       storage: 1Gi
-  storageClassName: manual
+  storageClassName: standard-rwo 
